@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  type="text/css" href="SearchFilter.css">
+
+</head>
+
+<body>
+
+    <div class="searchbox">
+
+        <div class="header">
+            <h1>Contacts</h1>
+            <input onkeyup="filter()" type="text" id="value" placeholder="Type to Search">
+        </div>
+
+        <div class="container">
+            <div class="profile">
+                <span class="icon">A</span>
+                <span class="name">Archie Hansen</span>
+            </div>
+            <div class="profile">
+                <span class="icon">D</span>
+                <span class="name">Danielle Spencer</span>
+            </div>
+            <div class="profile">
+                <span class="icon">M</span>
+                <span class="name">Margarita Austin</span>
+            </div>
+            <div class="profile">
+                <span class="icon">S</span>
+                <span class="name">Simon Danelle</span>
+            </div>
+            <div class="profile">
+                <span class="icon">G</span>
+                <span class="name">Glenn Stevenson</span>
+            </div>
+            <div class="profile">
+                <span class="icon">C</span>
+                <span class="name">Collen Black</span>
+            </div>
+            <div class="profile">
+                <span class="icon">M</span>
+                <span class="name">Miriam Johnston</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function filter(){
+            var value,name,profile,i;
+
+            value = document.getElementById("value").value.toUpperCase();
+            profile = document.getElementByClassName("profile");
+
+            for(i=0; i<profile.length;i++){
+                name = profile[i].getElementByClassName("name");
+                if(name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+                    profile[i].style.display = "flex";
+                }else{
+                  profile[i].style.display = "none";  
+                }
+            }
+        }
+    </script>
+    
+
+</body>
+
+</html>

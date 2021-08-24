@@ -1,0 +1,9 @@
+function testArr(arr) {
+    
+    var sum = 0;
+    for(var i=0; i<arr.length; i++){
+        sum += arr[i];
+    }
+    return sum;
+}
+console.log(testArr([6,3,5,1,2,4]));
